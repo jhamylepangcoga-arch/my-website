@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JHAMYLE B. PANCGOGA | DATA ARCHITECT</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Vanilla Tilt -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+<!-- Fonts & Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root { --emerald: #10b981; --bg: #01040a; }
+body { background: var(--bg); color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* HERO */
+.name-wrapper { position: relative; z-index: 20; padding: 10px 0; display: inline-block; }
+.hero-name { font-weight: 800; font-size: clamp(3.5rem,11vw,9rem); line-height:1; letter-spacing:-0.04em; text-transform:uppercase; color:#fff; text-shadow:0 10px 30px rgba(0,0,0,0.5); }
+
+/* RUNNING BARS */
+.bar-container { height:14px; background: rgba(255,255,255,0.05); border-radius:99px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); position:relative; }
+.bar-fill { height:100%; width:0%; background:linear-gradient(90deg,#059669,#10b981,#34d399); box-shadow:0 0 25px rgba(16,185,129,0.5); border-radius:99px; position:relative; }
+.bar-fill::after { content:''; position:absolute; top:0; left:0; bottom:0; right:0; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent); transform:translateX(-100%); animation:stream 2s infinite; }
+@keyframes stream { 100% { transform:translateX(100%); } }
+
+/* GLASS PANELS */
+.glass-panel { background: rgba(20,25,35,0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border:1px solid rgba(255,255,255,0.08); border-radius:32px; transition: all 0.5s cubic-bezier(0.2,0.8,0.2,1); transform-style: preserve-3d; }
+.glass-panel:hover { border-color: var(--emerald); background: rgba(20,25,35,0.6); transform: translateY(-10px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); }
+
+/* CONTACT BUTTONS */
+.contact-btn { background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+.contact-btn:hover { background: var(--emerald); color: #01040a; border-color: var(--emerald); transform: scale(1.02); box-shadow:0 0 30px rgba(16,185,129,0.4); }
+
+/* BACKGROUND */
+#neural-bg { position: fixed; top:0; left:0; z-index:-1; width:100%; height:100%; }
+</style>
+</head>
+<body>
+
+<canvas id="neural-bg"></canvas>
+
+<nav class="fixed top-0 w-full z-50 p-8 lg:p-12 flex justify-between items-center mix-blend-difference">
+    <div class="mono text-[10px] tracking-[0.6em] font-bold text-emerald-500 uppercase">JBP // SYSTEM_V.FINAL</div>
+    <div class="flex gap-6 mono text-[10px] tracking-widest text-white/60">
+        <span>STATUS: ACTIVE</span>
+        <span class="text-emerald-500">PH_LANTAPAN</span>
+    </div>
+</nav>
+
+<main class="relative z-10 px-6 lg:px-20 max-w-[1600px] mx-auto pt-40 pb-20">
+
+<section class="min-h-[85vh] flex flex-col justify-center mb-20">
+    <div class="max-w-7xl">
+        <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] mono font-bold uppercase tracking-[0.3em] mb-10" data-tilt>
+            <i class="fas fa-medal"></i> Summa Cum Laude Graduate
+        </div>
+
+        <div class="name-wrapper" data-tilt data-tilt-max="5">
+            <h1 class="hero-name">JHAMYLE<br><span class="text-emerald-500">PANCGOGA</span></h1>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-16 mt-16 items-end">
+            <div class="lg:col-span-7">
+                <p class="text-2xl lg:text-4xl text-slate-400 font-light leading-snug">
+                    High-precision <span class="text-white italic">Data Analyst</span> converting raw institutional data into mathematically rigorous insights.
+                </p>
+            </div>
+            <div class="lg:col-span-5 flex flex-col gap-4 w-full">
+                <a href="tel:+639525315233" class="contact-btn px-6 py-4 rounded-xl text-[11px] mono uppercase font-bold flex items-center gap-4 w-full group">
+                    <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-black/20"><i class="fas fa-phone"></i></div>+63 952 531 5233
+                </a>
+                <a href="mailto:jhamylepangcoga@gmail.com" class="contact-btn px-6 py-4 rounded-xl text-[11px] mono uppercase font-bold flex items-center gap-4 w-full group">
+                    <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-black/20"><i class="fas fa-envelope"></i></div>jhamylepangcoga@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/jhamyle-pangcoga" target="_blank" class="contact-btn px-6 py-4 rounded-xl text-[11px] mono uppercase font-bold flex items-center gap-4 w-full group">
+                    <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-black/20"><i class="fab fa-linkedin-in"></i></div>LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-40">
+    <h4 class="mono text-[10px] text-emerald-500 uppercase tracking-[0.5em] mb-12 font-bold pl-2">Technical Loadout</h4>
+    <div class="glass-panel p-12 lg:p-20 grid lg:grid-cols-2 gap-x-24 gap-y-16">
+        <div class="skill-unit" data-percent="95">
+            <div class="flex justify-between mono text-[11px] mb-4 font-bold text-white"><span>PYTHON (PANDAS/AUTOMATION)</span><span>95%</span></div>
+            <div class="bar-container"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-unit" data-percent="92">
+            <div class="flex justify-between mono text-[11px] mb-4 font-bold text-white"><span>R (STATISTICAL MODELING)</span><span>92%</span></div>
+            <div class="bar-container"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-unit" data-percent="90">
+            <div class="flex justify-between mono text-[11px] mb-4 font-bold text-white"><span>EXCEL (ADVANCED ANALYSIS)</span><span>90%</span></div>
+            <div class="bar-container"><div class="bar-fill"></div></div>
+        </div>
+        <div class="skill-unit" data-percent="45">
+            <div class="flex justify-between mono text-[11px] mb-4 font-bold text-slate-400"><span>SQL (QUERYING - LEARNING)</span><span>45%</span></div>
+            <div class="bar-container"><div class="bar-fill opacity-50"></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE PANELS -->
+<div class="grid lg:grid-cols-3 gap-8 mb-40">
+    <div class="glass-panel p-10 flex flex-col h-full" data-tilt>
+        <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-500 text-xl mb-8"><i class="fas fa-database"></i></div>
+        <h3 class="text-2xl font-bold mb-6 text-white">Analytics & Insights</h3>
+        <ul class="text-sm text-slate-400 space-y-4 leading-relaxed flex-grow">
+            <li>• Analyzed structured datasets ensuring accuracy via systematic cleaning.</li>
+            <li>• Conducted EDA to identify trends supporting audit-style research.</li>
+            <li>• Applied Regression and ANOVA for evidence-based conclusions.</li>
+        </ul>
+    </div>
+    <div class="glass-panel p-10 flex flex-col h-full" data-tilt>
+        <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-500 text-xl mb-8"><i class="fas fa-robot"></i></div>
+        <h3 class="text-2xl font-bold mb-6 text-white">Automation</h3>
+        <ul class="text-sm text-slate-400 space-y-4 leading-relaxed flex-grow">
+            <li>• Built Python-based workflows to automate repetitive data prep.</li>
+            <li>• Improved turnaround time and reproducibility of outputs.</li>
+            <li>• Designed visual summaries for diverse stakeholders.</li>
+        </ul>
+    </div>
+    <div class="glass-panel p-10 flex flex-col h-full" data-tilt>
+        <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-500 text-xl mb-8"><i class="fas fa-chart-area"></i></div>
+        <h3 class="text-2xl font-bold mb-6 text-white">Predictive Modeling</h3>
+        <ul class="text-sm text-slate-400 space-y-4 leading-relaxed flex-grow">
+            <li>• Developed analytical models grounded in statistical theory.</li>
+            <li>• Ensured discipline in assumptions and interpretation.</li>
+            <li>• <strong>Best Thesis Award</strong> for exceptional rigor.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ACADEMIC -->
+<section class="glass-panel p-12 lg:p-24 mb-40 border-l-8 border-emerald-500 relative overflow-hidden">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="relative z-10">
+            <h4 class="mono text-[10px] text-emerald-500 uppercase tracking-[0.5em] mb-8 font-bold">Academic Engine</h4>
+            <h2 class="text-5xl lg:text-7xl font-bold mb-4 uppercase text-white">BS Mathematics</h2>
+            <p class="text-xl lg:text-2xl text-slate-400 font-light mb-8">Central Mindanao University • Minor in Statistics</p>
+            <div class="inline-block px-8 py-4 bg-emerald-500 rounded-xl shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+                <span class="text-slate-900 font-bold mono text-xl tracking-tighter">SUMMA CUM LAUDE</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-emerald-500/30 transition">
+                <p class="mono text-[9px] text-emerald-500 mb-2 uppercase tracking-widest">Research</p>
+                <p class="font-bold text-white">Best Thesis Award</p>
+            </div>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-emerald-500/30 transition">
+                <p class="mono text-[9px] text-emerald-500 mb-2 uppercase tracking-widest">Scholarship</p>
+                <p class="font-bold text-white">Del Monte Scholar</p>
+            </div>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-emerald-500/30 transition">
+                <p class="mono text-[9px] text-emerald-500 mb-2 uppercase tracking-widest">National</p>
+                <p class="font-bold text-white">CHED UniFAST Award</p>
+            </div>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-emerald-500/30 transition">
+                <p class="mono text-[9px] text-emerald-500 mb-2 uppercase tracking-widest">Language</p>
+                <p class="font-bold text-white">English / Filipino / Cebuano</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center pb-20 opacity-60">
+    <a href="mailto:jhamylepangcoga@gmail.com" class="hero-name text-4xl lg:text-8xl hover:text-emerald-500 transition-all duration-500 cursor-pointer block mb-20">
+        CONNECT
+    </a>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 mono text-[10px] uppercase tracking-[0.3em]">
+        <span>© 2025 Jhamyle Pangcoga</span>
+        <span>Lantapan, Bukidnon</span>
+    </div>
+</footer>
+
+</main>
+
+<script>
+// THREE.JS DYNAMIC NEURAL BACKGROUND
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('neural-bg'), alpha:true, antialias:true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+camera.position.z = 25;
+
+const particlesCount = 4000;
+const positions = new Float32Array(particlesCount*3);
+for(let i=0;i<particlesCount*3;i++) positions[i] = (Math.random()-0.5)*60;
+
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute('position', new THREE.BufferAttribute(positions,3));
+const material = new THREE.PointsMaterial({ color:'#10b981', size:0.08, transparent:true, opacity:0.5 });
+const points = new THREE.Points(geometry, material);
+scene.add(points);
+
+// Lines between particles
+const maxDistance = 5;
+const lineMaterial = new THREE.LineBasicMaterial({ color:'#10b981', transparent:true, opacity:0.08 });
+const lineGeometry = new THREE.BufferGeometry();
+const linePositions = new Float32Array(particlesCount*particlesCount*3);
+const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+scene.add(lines);
+
+function updateLines(){
+    let index=0;
+    const pos = geometry.attributes.position.array;
+    for(let i=0;i<particlesCount;i++){
+        for(let j=i+1;j<particlesCount;j++){
+            const dx=pos[i*3]-pos[j*3], dy=pos[i*3+1]-pos[j*3+1], dz=pos[i*3+2]-pos[j*3+2];
+            const dist = Math.sqrt(dx*dx+dy*dy+dz*dz);
+            if(dist<maxDistance){
+                linePositions[index++] = pos[i*3]; linePositions[index++] = pos[i*3+1]; linePositions[index++] = pos[i*3+2];
+                linePositions[index++] = pos[j*3]; linePositions[index++] = pos[j*3+1]; linePositions[index++] = pos[j*3+2];
+            }
+        }
+    }
+    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions.slice(0,index),3));
+}
+
+function animate(){
+    requestAnimationFrame(animate);
+    const pos = geometry.attributes.position.array;
+    for(let i=0;i<particlesCount;i++){
+        pos[i*3+1] += 0.01*Math.sin(i + Date.now()*0.001);
+        pos[i*3] += 0.01*Math.cos(i + Date.now()*0.001);
+    }
+    geometry.attributes.position.needsUpdate = true;
+    updateLines();
+
+    points.rotation.y += 0.0005;
+    points.rotation.x += 0.0002;
+    lines.rotation.y += 0.0003;
+    lines.rotation.x += 0.0001;
+    renderer.render(scene,camera);
+}
+animate();
+
+window.addEventListener('resize', ()=>{
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
+gsap.from(".hero-name",{ duration:1.5, y:100, opacity:0, ease:"power4.out" });
+document.querySelectorAll('.skill-unit').forEach(unit=>{
+    const bar = unit.querySelector('.bar-fill');
+    const target = unit.getAttribute('data-percent');
+    ScrollTrigger.create({ trigger: unit, start:"top 90%", onEnter:()=>gsap.to(bar,{ width:target+"%", duration:2, ease:"power2.out" }) });
+});
+gsap.utils.toArray('.glass-panel').forEach(panel=>{
+    gsap.from(panel,{ y:50, opacity:0, duration:1, scrollTrigger:{ trigger: panel, start:"top 95%" } });
+});
+
+// Vanilla Tilt
+VanillaTilt.init(document.querySelectorAll("[data-tilt], .glass-panel"), { max:5, speed:1000, glare:true, "max-glare":0.1, scale:1.01 });
+</script>
+
+</body>
+</html>
